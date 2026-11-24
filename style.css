@@ -1435,3 +1435,25 @@ body.modal-open {
     transform: none;
   }
 }
+.hero-stage {
+  height: auto;
+  min-height: 0;
+}
+
+.stage-main {
+  margin: 0;
+  height: auto;
+}
+
+.stage-main img {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.stage-main figcaption {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 9px;
+}
