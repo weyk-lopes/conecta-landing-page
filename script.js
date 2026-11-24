@@ -27,11 +27,9 @@ document.querySelectorAll('.service-trigger,.services .service').forEach(card=>c
 modal.querySelectorAll('[data-modal-close]').forEach(element=>element.addEventListener('click',closeService));
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-open'))closeService();if(event.key==='Escape'&&menu.classList.contains('open')){closeMenu();menuButton.focus();}});
 document.querySelectorAll('[data-contact]').forEach(link=>{link.href=whatsapp+'?text='+encodeURIComponent('Olá, Conecta! Vim pelo site e gostaria de conversar sobre uma solução de TI.');});
-const revealItems=document.querySelectorAll('.section-heading,.service,.about-art,.about-copy,.chat-panel,.faq-section,.contact');
-revealItems.forEach(item=>item.classList.add('reveal'));
+const revealItems=document.querySelectorAll('.section-heading,.service,.showcase-heading,.gallery-card,.instagram-cta,.about-art,.about-copy,.chat-panel,.faq-section,.contact');
+revealItems.forEach((item,index)=>{item.classList.add('reveal');item.style.setProperty('--delay',(index%4)*70+'ms');});
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.12});revealItems.forEach(item=>observer.observe(item));}else revealItems.forEach(item=>item.classList.add('is-visible'));
 const syncHeader=()=>header.classList.toggle('scrolled',window.scrollY>12);
 syncHeader();window.addEventListener('scroll',syncHeader,{passive:true});
 document.querySelector('#year').textContent=new Date().getFullYear();
-
-document.addEventListener('click',event=>{const card=event.target.closest('.services .service');if(card){event.preventDefault();openService(card.dataset.serviceId,card);}},true);
