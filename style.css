@@ -722,6 +722,28 @@ img {
   }
 }
 
+/* Galeria final: somente as artes fornecidas pelo cliente */
+.hero-stage {
+  display: block;
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+.hero-stage .stage-main {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  width: 100%;
+  aspect-ratio: auto;
+}
+
+.hero-stage .stage-main img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1284 / 1600;
+  object-fit: contain;
+  object-position: center;
+}
+
 @media (max-width: 420px) {
   .hero h1 {
     font-size: clamp(2.35rem, 12.5vw, 3.2rem);
