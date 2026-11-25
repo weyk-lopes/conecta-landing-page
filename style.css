@@ -1457,3 +1457,41 @@ body.modal-open {
   overflow: hidden;
   font-size: 9px;
 }
+
+/* Escala do novo título: mantém as frases legíveis sem quebrar palavras */
+.hero h1 {
+  font-size: clamp(2.8rem, 3.7vw, 3.9rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.hero h1 .headline-line {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+
+@media (min-width: 1081px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(400px, 0.85fr);
+    gap: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .hero-copy {
+    max-width: 46rem;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero h1 {
+    font-size: clamp(2.3rem, 10vw, 3.25rem);
+    letter-spacing: -0.05em;
+  }
+}
